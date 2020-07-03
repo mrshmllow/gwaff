@@ -1,11 +1,7 @@
-import random
 import requests
 import json
 import matplotlib.pyplot as plt
-from matplotlib.ticker import MaxNLocator
-from labellines import labelLine, labelLines
-import numpy as np
-from scipy.stats import loglaplace, chi2
+from labellines import labelLines
 
 
 def gethistory():
