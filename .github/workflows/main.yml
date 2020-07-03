@@ -13,6 +13,7 @@ jobs:
 
 
     steps:
+    - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
@@ -25,4 +26,4 @@ jobs:
     
     - name: store data
       run: |
-        echo $GITHUB_WORKSPACE
+        python3 show_store.py
