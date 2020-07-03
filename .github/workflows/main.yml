@@ -25,4 +25,4 @@ jobs:
     
     - name: store data
       run: |
-        ls $GITHUB_WORKSPACE
+        echo $GITHUB_WORKSPACE
