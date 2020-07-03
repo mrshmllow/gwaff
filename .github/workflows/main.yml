@@ -25,6 +25,6 @@ jobs:
     
     - name: store data
       run: |
-        python3 store.py
+        python3 ../../store.py
     
         
