@@ -1,7 +1,5 @@
 # gwaff
 
-Data recording status:
-
 ![store](https://github.com/bwac2517/gwaff/workflows/store/badge.svg?branch=master)
 
 A custom made mee6 xp graphing tool for the Mumbo Jumbo discord server 
