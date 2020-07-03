@@ -2,7 +2,7 @@ name: store
 
 on:
   schedule:    
-  - cron: "* * * * *"
+  - cron: "0 0 * * *"
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
     
     - uses: EndBug/add-and-commit@v4
       with:
-        message: "Add the very useful text file"
+        message: "automated recording of xp data"
         add: "*"
         cwd: .
         force: true
