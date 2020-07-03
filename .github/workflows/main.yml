@@ -26,4 +26,4 @@ jobs:
     - name: store data
       working-directory: ./
       run: |
-        ls
+        python show_store.py
