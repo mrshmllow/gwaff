@@ -26,4 +26,4 @@ jobs:
     
     - name: store data
       run: |
-        python3 show_store.py
+        python3 store.py
