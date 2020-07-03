@@ -25,6 +25,6 @@ jobs:
     
     - name: store data
       run: |
-        cat show_store.py
+        ls
     
         
