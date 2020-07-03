@@ -27,10 +27,7 @@ jobs:
     - name: store data
       run: |
         python3 store.py
-    
-    - name: test
-      run: |
-        ls history/
+
     
     - uses: EndBug/add-and-commit@v4
       with:
