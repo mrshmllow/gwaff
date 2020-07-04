@@ -12,7 +12,8 @@ def gethistory():
     page = 0
     users = {}
     q = 0
-    for i in range(int(config["data_range"] / 100)):
+    i = 0
+    while i < int(config["data_range"] / 100):
         r = requests.get(
             f"https://mee6.xyz/api/plugins/levels/leaderboard/{config['server_id']}?page={str(page)}"
         ).json()
@@ -27,6 +28,7 @@ def gethistory():
         else:
             break
         page += 1
+        i += 1
     return users
 
 
@@ -109,7 +111,7 @@ def xpgained(gwaff):
                     g += 1
                     continue
                 f = 0
-                for xp in total_xp:
+                while f < len(total_xp):
                     x.append(f)
                     f += 1
                 plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
