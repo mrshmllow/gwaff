@@ -50,14 +50,18 @@ def makegwaff(new_users, time):
             gwaff[new_users[user]["id"]][
                 "name"
             ] = f"{new_users[user]['username']}#{new_users[user]['discriminator']}"
-            gwaff[new_users[user]["id"]]["message_count"][str(time)] = new_users[user][
-                "message_count"
+            gwaff[new_users[user]["id"]]["message_count"][
+                str(time)
+            ] = new_users[user]["message_count"]
+            gwaff[new_users[user]["id"]]["total_xp"][str(time)] = new_users[
+                user
+            ]["xp"]
+            gwaff[new_users[user]["id"]]["detailed_xp"][str(time)] = new_users[
+                user
+            ]["detailed_xp"]
+            gwaff[new_users[user]["id"]]["level"][str(time)] = new_users[user][
+                "level"
             ]
-            gwaff[new_users[user]["id"]]["total_xp"][str(time)] = new_users[user]["xp"]
-            gwaff[new_users[user]["id"]]["detailed_xp"][str(time)] = new_users[user][
-                "detailed_xp"
-            ]
-            gwaff[new_users[user]["id"]]["level"][str(time)] = new_users[user]["level"]
 
     return gwaff
 
@@ -121,7 +125,7 @@ def xpgained(gwaff):
                 labelLines(plt.gca().get_lines(), align=True)
                 plt.legend(bbox_to_anchor=(1, 1))
                 plt.xlabel(
-                    f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')}[0]{config['bottom_message']}"
+                    f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}{config['bottom_message']}"
                 )
                 plt.ylabel("gain")
                 title = config["title"]
