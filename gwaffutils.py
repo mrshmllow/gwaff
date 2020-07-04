@@ -2,7 +2,8 @@ import requests
 import json
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-from labellines import labelLines
+from labellines import labelLine, labelLines
+import random
 from yaml import safe_load
 
 
@@ -98,7 +99,7 @@ def xpgained(gwaff):
                 q += 1
                 g += 1
             else:
-                # labelLines(plt.gca().get_lines(), align=True)
+                labelLines(plt.gca().get_lines(), align=True)
                 plt.legend(bbox_to_anchor=(1, 1))
                 plt.xlabel(
                     f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin "
