@@ -4,7 +4,7 @@
 
 A mee6 xp graphing python program using matplotlib
 
-To use it for your own server, fork it and edit the config.yml
+To use it for your own server, fork it and edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 
 ```
 server_id: 377946908783673344 # your server id
