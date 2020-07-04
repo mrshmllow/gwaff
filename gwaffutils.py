@@ -123,11 +123,10 @@ def xpgained(gwaff):
                 labelLines(plt.gca().get_lines(), align=True)
                 plt.legend(bbox_to_anchor=(1, 1))
                 plt.xlabel(
-                    f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin "
-                    f"cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff"
+                    f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')}[0]{config['bottom_message']}"
                 )
                 plt.ylabel("gain")
-                title = f"GWAFF V2\nxp gain overtime"
+                title = config["title"]
                 if config["minium_xp"] > 0:
                     title += f"\ngain atleast {config['minium_xp']} to appear"
                 plt.title(title)
