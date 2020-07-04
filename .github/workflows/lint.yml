@@ -28,7 +28,7 @@ jobs:
       
       - uses: EndBug/add-and-commit@v4
         with:
-          message: "automated blackening"
+          message: "automated blackening via actions"
           add: "*"
           cwd: .
           force: true
