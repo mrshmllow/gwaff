@@ -2,7 +2,8 @@
 
 ![record-xp-data](https://github.com/bwac2517/gwaff/workflows/record-xp-data/badge.svg)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f794c74a0d0c4ceba5b4ac8bbc2c4afd)](https://app.codacy.com/manual/bobwithacamera/gwaff?utm_source=github.com&utm_medium=referral&utm_content=bwac2517/gwaff&utm_campaign=Badge_Grade_Dashboard)
+![Codacy grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed?style=flat-square)
+
 
 A mee6 xp graphing python program using matplotlib
 
