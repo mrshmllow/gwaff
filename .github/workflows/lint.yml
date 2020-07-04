@@ -23,7 +23,7 @@ jobs:
       
       - name: blacken
         run: |
-          python3 -m black -m
+          python3 -m black .
       
       
       - uses: EndBug/add-and-commit@v4
