@@ -50,14 +50,18 @@ def makegwaff(new_users, time):
             gwaff[new_users[user]["id"]][
                 "name"
             ] = f"{new_users[user]['username']}#{new_users[user]['discriminator']}"
-            gwaff[new_users[user]["id"]]["message_count"][str(time)] = new_users[user][
-                "message_count"
+            gwaff[new_users[user]["id"]]["message_count"][
+                str(time)
+            ] = new_users[user]["message_count"]
+            gwaff[new_users[user]["id"]]["total_xp"][str(time)] = new_users[
+                user
+            ]["xp"]
+            gwaff[new_users[user]["id"]]["detailed_xp"][str(time)] = new_users[
+                user
+            ]["detailed_xp"]
+            gwaff[new_users[user]["id"]]["level"][str(time)] = new_users[user][
+                "level"
             ]
-            gwaff[new_users[user]["id"]]["total_xp"][str(time)] = new_users[user]["xp"]
-            gwaff[new_users[user]["id"]]["detailed_xp"][str(time)] = new_users[user][
-                "detailed_xp"
-            ]
-            gwaff[new_users[user]["id"]]["level"][str(time)] = new_users[user]["level"]
 
     return gwaff
 
@@ -96,6 +100,7 @@ def xpgained(gwaff):
     plt.figure(figsize=(14, 7))
     g = 0
     q = 0
+    rankrange = [0, 20]
     for user in gwaff:
         if g < config["plot_range"]:
             if q < 19:
@@ -124,7 +129,9 @@ def xpgained(gwaff):
                     f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}{config['bottom_message']}"
                 )
                 plt.ylabel("gain")
-                title = config["title"]
+                title = f"ranks: {config['title']}\n{rankrange[0]}-{rankrange[1]}"
+                rankrange[0] = rankrange[1]
+                rankrange[1] = rankrange[1] + 20
                 if config["minium_xp"] > 0:
                     title += f"\ngain atleast {config['minium_xp']} to appear"
                 plt.title(title)
