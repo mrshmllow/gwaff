@@ -104,7 +104,7 @@ def xpgained(gwaff):
                     f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin "
                     f"cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
                 plt.ylabel("gain")
-                plt.title(f"GWAFF V2\nxp gain overtime (top {0})\ngain atleast 500 xp to appear")
+                plt.title(f"GWAFF V2\nxp gain overtime\ngain atleast 500 xp to appear")
                 plt.show()
                 plt.close()
                 plt.figure(figsize=(14, 7))
