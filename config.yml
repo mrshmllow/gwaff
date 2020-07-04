@@ -1,3 +1,5 @@
 server_id: 690674546168168558 # your server id
 plot_range: 60
 data_range: 300 # -1 for all users
+minium_xp: 500
+darkmode: true

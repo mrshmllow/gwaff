@@ -64,110 +64,50 @@ def xpgained(gwaff):
     with open("../config.yml", "r") as file:
         config = safe_load(file)
 
-    colours = ["#ff1500", "#fffb00", "#2fff00", "#00ffff", "#0044ff", "#a200ff", "#ff00c8"]
-
     mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=['blue', 'green', 'red', 'cyan', 'magenta',
                                                         'yellow', 'black', 'purple', 'pink',
                                                         'brown', 'orange', 'teal', 'coral',
                                                         'lightblue', 'lime', 'lavender',
                                                         'turquoise', 'darkgreen', 'tan', 'salmon',
                                                         'gold'])
-
-    plt.style.use('dark_background')
-
+    if config["darkmode"]:
+        plt.style.use('dark_background')
     plt.figure(figsize=(14, 7))
+    g = 0
     q = 0
     for user in gwaff:
-        if q < 19:
-            y = [0]
-            x = []
-            total_xp = gwaff[user]["total_xp"]
+        if g < config["plot_range"]:
+            if q < 19:
+                y = [0]
+                x = []
+                total_xp = gwaff[user]["total_xp"]
+                for i in zip(list(total_xp), list(total_xp)[1:]):
+                    first = i[0]
+                    second = i[1]
+                    y.append(abs(total_xp[first] - total_xp[second]))
+                if y[-1] < config["minium_xp"]:
+                    q += 1
+                    g += 1
+                    continue
+                f = 0
+                for xp in total_xp:
+                    x.append(f)
+                    f += 1
 
-            for i in zip(list(total_xp), list(total_xp)[1:]):
-                first = i[0]
-                second = i[1]
-                y.append(abs(total_xp[first] - total_xp[second]))
-
-            if y[-1] < 500:
+                plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
                 q += 1
-                continue
-
-            f = 0
-            for xp in total_xp:
-                x.append(f)
-                f += 1
-
-            line = plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
-        q += 1
-
-    labelLines(plt.gca().get_lines(), align=True)
-    plt.legend(bbox_to_anchor=(1, 1))
-    plt.xlabel(f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
-    plt.ylabel("gain")
-    plt.title("GWAFF V2\nxp gain overtime (top 20)\ngain atleast 500 xp to appear")
-    plt.show()
-    plt.close()
-
-    plt.figure(figsize=(14, 7))
-    q = 0
-    for user in gwaff:
-        if 39 > q > 19:
-            y = [0]
-            x = []
-            total_xp = gwaff[user]["total_xp"]
-            for i in zip(list(total_xp), list(total_xp)[1:]):
-                first = i[0]
-                second = i[1]
-                y.append(abs(total_xp[first] - total_xp[second]))
-
-            if y[-1] < 500:
-                q += 1
-                continue
-
-            f = 0
-            for xp in total_xp:
-                x.append(f)
-                f += 1
-            line = plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
-        q += 1
-    labelLines(plt.gca().get_lines(), align=True)
-    plt.legend(bbox_to_anchor=(1, 1))
-    plt.title("GWAFF V2\nxp gain overtime (top 20 - 40)\ngain atleast 500 xp to appear")
-    plt.xlabel(f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
-    plt.ylabel("gain")
-    plt.show()
-    plt.close()
-
-
-    plt.figure(figsize=(14, 7))
-    q = 0
-    for user in gwaff:
-        print("hello")
-        if 59 > q > 39:
-            y = [0]
-            x = []
-            total_xp = gwaff[user]["total_xp"]
-            for i in zip(list(total_xp), list(total_xp)[1:]):
-                first = i[0]
-                second = i[1]
-                y.append(abs(total_xp[first] - total_xp[second]))
-
-            if y[-1] < 500:
-                q += 1
-                continue
-
-            f = 0
-            for xp in total_xp:
-                x.append(f)
-                f += 1
-            line = plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
-            print("yes")
-        q += 1
-
-    labelLines(plt.gca().get_lines(), align=True)
-    plt.legend(bbox_to_anchor=(1, 1))
-    plt.title("GWAFF V2\nxp gain overtime (top 40 - 60)")
-    plt.xlabel(f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
-    plt.ylabel("gain")
-    plt.show()
-    plt.close()
+                g += 1
+            else:
+                # labelLines(plt.gca().get_lines(), align=True)
+                plt.legend(bbox_to_anchor=(1, 1))
+                plt.xlabel(
+                    f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin "
+                    f"cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
+                plt.ylabel("gain")
+                plt.title(f"GWAFF V2\nxp gain overtime (top {0})\ngain atleast 500 xp to appear")
+                plt.show()
+                plt.close()
+                plt.figure(figsize=(14, 7))
+                q = 0
+        else:
+            break
