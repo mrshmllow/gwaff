@@ -4,7 +4,8 @@
 
 A mee6 xp graphing python program using matplotlib
 
-To use it for your own server, fork it and edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
+To use it for your own server, use this ![as a template repo](https://github.com/bwac2517/gwaff/generate) OR download it and use it locally.
+Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 
 ```
 server_id: 377946908783673344 # your server id
@@ -14,6 +15,5 @@ minium_xp: 500 # anyone with a xp gain below this will not be included in the pl
 darkmode: true # dark mode or not
 ```
 
-run store.py everyday, and you use plot.py every 2 days.
+You have to run store.py at the same time, every day.
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
-Hack to taste
