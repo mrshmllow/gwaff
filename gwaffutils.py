@@ -93,7 +93,7 @@ def xpgained(gwaff):
                 for xp in total_xp:
                     x.append(f)
                     f += 1
-                line = plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
+                plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
                 q += 1
                 g += 1
             else:
