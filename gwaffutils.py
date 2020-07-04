@@ -100,10 +100,10 @@ def xpgained(gwaff):
     plt.figure(figsize=(14, 7))
     g = 0
     q = 0
-    rankrange = [0, 20]
+    rankrange = [0, config["rank_range"]]
     for user in gwaff:
         if g < config["plot_range"]:
-            if q < 19:
+            if q < config["rank_range"] - 1:
                 y = [0]
                 x = []
                 total_xp = gwaff[user]["total_xp"]
@@ -131,7 +131,7 @@ def xpgained(gwaff):
                 plt.ylabel("gain")
                 title = f"ranks: {config['title']}\n{rankrange[0]}-{rankrange[1]}"
                 rankrange[0] = rankrange[1]
-                rankrange[1] = rankrange[1] + 20
+                rankrange[1] = rankrange[1] + config["rank_range"]
                 if config["minium_xp"] > 0:
                     title += f"\ngain atleast {config['minium_xp']} to appear"
                 plt.title(title)
