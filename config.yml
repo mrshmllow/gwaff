@@ -1,5 +1,5 @@
-server_id: 690674546168168558 # your server id
-plot_range: 60
-data_range: 300 # -1 for all users
-minium_xp: 500
-darkmode: true
+server_id: 377946908783673344 # your server id
+plot_range: 60 # how many uses to include in the plots
+data_range: 300 # -1 for all users. how many people to include in data collection
+minium_xp: 500 # anyone with a xp gain below this will not be included in the plots
+darkmode: true # dark mode or not
