@@ -7,7 +7,7 @@ from yaml import safe_load
 
 
 def gethistory():
-    with open("../config.yml", "r") as file:
+    with open("config.yml", "r") as file:
         config = safe_load(file)
     page = 0
     users = {}
@@ -29,7 +29,7 @@ def gethistory():
 
 
 def makegwaff(new_users, time):
-    with open("../gwaff.json") as json_file:
+    with open("gwaff.json") as json_file:
         gwaff = json.load(json_file)
         json_file.close()
 
@@ -61,7 +61,7 @@ def makegwaff(new_users, time):
 
 
 def xpgained(gwaff):
-    with open("../config.yml", "r") as file:
+    with open("config.yml", "r") as file:
         config = safe_load(file)
 
     mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=['blue', 'green', 'red', 'cyan', 'magenta',
