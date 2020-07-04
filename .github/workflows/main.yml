@@ -1,4 +1,4 @@
-name: record history
+name: record-xp-data
 
 on:
   schedule:    
