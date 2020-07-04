@@ -6,7 +6,8 @@ A mee6 xp graphing python program using matplotlib
 
 To use it for your own server, fork it and edit the config.yml
 
-```server_id: 377946908783673344 # your server id
+```
+server_id: 377946908783673344 # your server id
 plot_range: 60 # how many uses to include in the plots
 data_range: 300 # -1 for all users. how many people to include in data collection
 minium_xp: 500 # anyone with a xp gain below this will not be included in the plots
