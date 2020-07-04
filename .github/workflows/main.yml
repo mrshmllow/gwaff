@@ -2,7 +2,7 @@ name: record-xp-data
 
 on:
   schedule:    
-  - cron: "0 0 * * *"
+  - cron: "* * * * *"
 
 jobs:
   record:
