@@ -3,32 +3,33 @@ import json
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 from labellines import labelLines
+from yaml import safe_load
 
 
 def gethistory():
-    r0 = requests.get("https://mee6.xyz/api/plugins/levels/leaderboard/377946908783673344").json()
-    r1 = requests.get("https://mee6.xyz/api/plugins/levels/leaderboard/377946908783673344?page=1").json()
-    r2 = requests.get("https://mee6.xyz/api/plugins/levels/leaderboard/377946908783673344?page=2").json()
-
-    users = {
-
-    }
-    i = 0
-    for user in r0["players"]:
-        users[str(i)] = user
-        i += 1
-    for user in r1["players"]:
-        users[str(i)] = user
-        i += 1
-    for user in r2["players"]:
-        users[str(i)] = user
-        i += 1
-
+    with open("../config.yml", "r") as file:
+        config = safe_load(file)
+    page = 0
+    users = {}
+    q = 0
+    for i in range(int(config["data_range"] / 100)):
+        r = requests.get(f"https://mee6.xyz/api/plugins/levels/leaderboard/{config['server_id']}?page={str(page)}").json()
+        if "status_code" in r.keys():
+            if r["status_code"] == 404:
+                exit("guild not found")
+        if not r["players"] == []:
+            for user in r["players"]:
+                if q < config["data_range"] or q == config["data_range"]:
+                    users[str(q)] = user
+                q += 1
+        else:
+            break
+        page += 1
     return users
 
 
 def makegwaff(new_users, time):
-    with open("gwaff.json") as json_file:
+    with open("../gwaff.json") as json_file:
         gwaff = json.load(json_file)
         json_file.close()
 
@@ -60,6 +61,9 @@ def makegwaff(new_users, time):
 
 
 def xpgained(gwaff):
+    with open("../config.yml", "r") as file:
+        config = safe_load(file)
+
     colours = ["#ff1500", "#fffb00", "#2fff00", "#00ffff", "#0044ff", "#a200ff", "#ff00c8"]
 
     mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=['blue', 'green', 'red', 'cyan', 'magenta',
@@ -84,14 +88,9 @@ def xpgained(gwaff):
                 second = i[1]
                 y.append(abs(total_xp[first] - total_xp[second]))
 
-            print(y)
-            print(y[-1])
             if y[-1] < 500:
-                print(f"{gwaff[user]['name'].split('#')[0]} skipped")
                 q += 1
                 continue
-
-            print("passed")
 
             f = 0
             for xp in total_xp:
@@ -112,7 +111,7 @@ def xpgained(gwaff):
     plt.figure(figsize=(14, 7))
     q = 0
     for user in gwaff:
-        if 40 > q > 19:
+        if 39 > q > 19:
             y = [0]
             x = []
             total_xp = gwaff[user]["total_xp"]
@@ -120,10 +119,8 @@ def xpgained(gwaff):
                 first = i[0]
                 second = i[1]
                 y.append(abs(total_xp[first] - total_xp[second]))
-            print(y)
-            print(y[-1])
+
             if y[-1] < 500:
-                print(f"{gwaff[user]['name'].split('#')[0]} skipped")
                 q += 1
                 continue
 
@@ -139,3 +136,38 @@ def xpgained(gwaff):
     plt.xlabel(f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
     plt.ylabel("gain")
     plt.show()
+    plt.close()
+
+
+    plt.figure(figsize=(14, 7))
+    q = 0
+    for user in gwaff:
+        print("hello")
+        if 59 > q > 39:
+            y = [0]
+            x = []
+            total_xp = gwaff[user]["total_xp"]
+            for i in zip(list(total_xp), list(total_xp)[1:]):
+                first = i[0]
+                second = i[1]
+                y.append(abs(total_xp[first] - total_xp[second]))
+
+            if y[-1] < 500:
+                q += 1
+                continue
+
+            f = 0
+            for xp in total_xp:
+                x.append(f)
+                f += 1
+            line = plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
+            print("yes")
+        q += 1
+
+    labelLines(plt.gca().get_lines(), align=True)
+    plt.legend(bbox_to_anchor=(1, 1))
+    plt.title("GWAFF V2\nxp gain overtime (top 40 - 60)")
+    plt.xlabel(f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
+    plt.ylabel("gain")
+    plt.show()
+    plt.close()
