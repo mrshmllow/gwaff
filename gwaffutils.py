@@ -6,6 +6,9 @@ from labellines import labelLines
 from yaml import safe_load
 
 
+
+
+
 def gethistory():
     with open("config.yml", "r") as file:
         config = safe_load(file)
