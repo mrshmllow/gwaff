@@ -1,6 +1,6 @@
 # gwaff
 
-![record-xp-data](https://github.com/bwac2517/gwaff/workflows/record-xp-data/badge.svg)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bwac2517/gwaff/record-xp-data?style=flat-square)
 
 ![Codacy grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed?style=flat-square)
 
