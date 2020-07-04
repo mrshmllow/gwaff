@@ -2,8 +2,7 @@ import requests
 import json
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-from labellines import labelLine, labelLines
-import random
+from labellines import labelLines
 from yaml import safe_load
 
 
@@ -110,6 +109,7 @@ def xpgained(gwaff):
                 plt.title(title)
                 plt.show()
                 plt.close()
+
                 plt.figure(figsize=(14, 7))
                 q = 0
         else:
