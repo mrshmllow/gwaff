@@ -4,7 +4,7 @@
 
 A mee6 xp graphing python program using matplotlib
 
-To use it for your own server, use this ![as a template repo](https://github.com/bwac2517/gwaff/generate) OR download it and use it locally.
+To use it for your own server, ![fork](https://github.com/bwac2517/gwaff/fork) OR download it and use it locally.
 Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 
 ```server_id: 377946908783673344 # your server id
