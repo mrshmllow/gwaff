@@ -13,7 +13,9 @@ def gethistory():
     users = {}
     q = 0
     for i in range(int(config["data_range"] / 100)):
-        r = requests.get(f"https://mee6.xyz/api/plugins/levels/leaderboard/{config['server_id']}?page={str(page)}").json()
+        r = requests.get(
+            f"https://mee6.xyz/api/plugins/levels/leaderboard/{config['server_id']}?page={str(page)}"
+        ).json()
         if "status_code" in r.keys():
             if r["status_code"] == 404:
                 exit("guild not found")
@@ -37,24 +39,22 @@ def makegwaff(new_users, time):
         if new_users[user]["id"] not in gwaff:
             gwaff[new_users[user]["id"]] = {
                 "name": f"{new_users[user]['username']}#{new_users[user]['discriminator']}",
-                "message_count": {
-                    str(time): new_users[user]["message_count"]
-                },
-                "total_xp": {
-                    str(time): new_users[user]["xp"],
-                },
-                "detailed_xp": {
-                    str(time): new_users[user]["detailed_xp"]
-                },
-                "level": {
-                    str(time): new_users[user]["level"]
-                }
+                "message_count": {str(time): new_users[user]["message_count"]},
+                "total_xp": {str(time): new_users[user]["xp"],},
+                "detailed_xp": {str(time): new_users[user]["detailed_xp"]},
+                "level": {str(time): new_users[user]["level"]},
             }
         else:
-            gwaff[new_users[user]["id"]]["name"] = f"{new_users[user]['username']}#{new_users[user]['discriminator']}"
-            gwaff[new_users[user]["id"]]["message_count"][str(time)] = new_users[user]["message_count"]
+            gwaff[new_users[user]["id"]][
+                "name"
+            ] = f"{new_users[user]['username']}#{new_users[user]['discriminator']}"
+            gwaff[new_users[user]["id"]]["message_count"][str(time)] = new_users[user][
+                "message_count"
+            ]
             gwaff[new_users[user]["id"]]["total_xp"][str(time)] = new_users[user]["xp"]
-            gwaff[new_users[user]["id"]]["detailed_xp"][str(time)] = new_users[user]["detailed_xp"]
+            gwaff[new_users[user]["id"]]["detailed_xp"][str(time)] = new_users[user][
+                "detailed_xp"
+            ]
             gwaff[new_users[user]["id"]]["level"][str(time)] = new_users[user]["level"]
 
     return gwaff
@@ -64,14 +64,33 @@ def xpgained(gwaff):
     with open("config.yml", "r") as file:
         config = safe_load(file)
 
-    mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=['blue', 'green', 'red', 'cyan', 'magenta',
-                                                        'yellow', 'black', 'purple', 'pink',
-                                                        'brown', 'orange', 'teal', 'coral',
-                                                        'lightblue', 'lime', 'lavender',
-                                                        'turquoise', 'darkgreen', 'tan', 'salmon',
-                                                        'gold'])
+    mpl.rcParams["axes.prop_cycle"] = mpl.cycler(
+        color=[
+            "blue",
+            "green",
+            "red",
+            "cyan",
+            "magenta",
+            "yellow",
+            "black",
+            "purple",
+            "pink",
+            "brown",
+            "orange",
+            "teal",
+            "coral",
+            "lightblue",
+            "lime",
+            "lavender",
+            "turquoise",
+            "darkgreen",
+            "tan",
+            "salmon",
+            "gold",
+        ]
+    )
     if config["darkmode"]:
-        plt.style.use('dark_background')
+        plt.style.use("dark_background")
     plt.figure(figsize=(14, 7))
     g = 0
     q = 0
@@ -101,7 +120,8 @@ def xpgained(gwaff):
                 plt.legend(bbox_to_anchor=(1, 1))
                 plt.xlabel(
                     f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}\n\nJoin "
-                    f"cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff")
+                    f"cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff"
+                )
                 plt.ylabel("gain")
                 title = f"GWAFF V2\nxp gain overtime"
                 if config["minium_xp"] > 0:
