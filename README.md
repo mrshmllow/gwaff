@@ -6,9 +6,8 @@ A mee6 xp graphing python program using matplotlib.
 
 Originally made for the mumbo jumbo discord server
 
-To use it for your own server, ![fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
-Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
-
+1. To use it for your own server, ![fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
+2. Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)  
 ```server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
 title: "GWAFF V2"
@@ -22,9 +21,10 @@ bar:
 data:
   range: 300 # -1 for all users. how many people to include in data collection
 ```
-
-You have to run store.py at the same time, every day.
-
+3. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep concistancy)  
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
 
-Every two days, you can generate a graph, hack in any changes you want (suggest changes :p)
+4. Every two days, you can generate a graph with `python3 gwaff.py -p`  
+**you can use `python3 gwaff.py -s -p` to do both at once**
+
+hack in any changes you want (open a RP :p)
