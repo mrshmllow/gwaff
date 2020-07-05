@@ -109,7 +109,7 @@ def line(gwaff):
                 rankrange[1] = rankrange[1] + config["rank_range"]
                 if config["minium_xp"] > 0:
                     title += f"\ngain atleast {config['minium_xp']} to appear"
-                plt.title(title)
+                plt.title(f"{title}\nxp gained overtime")
                 plt.show()
                 plt.close()
 
