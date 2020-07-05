@@ -21,7 +21,7 @@ bar:
 data:
   range: 300 # -1 for all users. how many people to include in data collection
 ```
-3. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep concistancy)  
+3. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep consistency)  
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
 
 4. Every two days, you can generate a graph with `python3 gwaff.py -p`  
