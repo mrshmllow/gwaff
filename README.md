@@ -28,6 +28,6 @@ Install dependencies with `python3 -m pip install -r requirements.txt`
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
 
 5. Every two days, you can generate a graphs with `python3 gwaff.py -p`  
-**you can use `python3 gwaff.py -s -p` to do both at once**
+**you can use `python3 gwaff.py -s -p` to do both at once**. 
 
-Add your changes by clicking on the little pencil at the top of the file, or open a pull request!
+6. Make any changes you want! (make a pull request :p)
