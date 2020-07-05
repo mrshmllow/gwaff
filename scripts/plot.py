@@ -75,9 +75,7 @@ def byrank(gwaff):
                     f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}{config['bottom_message']}"
                 )
                 plt.ylabel("gain")
-                title = (
-                    f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
-                )
+                title = f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
                 rankrange[0] = rankrange[1]
                 rankrange[1] = rankrange[1] + config["rank_range"]
                 if config["minium_xp"] > 0:
