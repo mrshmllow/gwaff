@@ -4,15 +4,44 @@ from labellines import labelLines
 from yaml import safe_load
 
 
-def bygain(gwaff):
+def bar(gwaff):
     with open("config.yml", "r") as file:
         config = safe_load(file)
 
     if config["darkmode"]:
         plt.style.use("dark_background")
 
+    users = {}
+    for user in gwaff:
+        try:
+            users[
+                abs(
+                    gwaff[user]["total_xp"][list(gwaff[user]["total_xp"])[-1]]
+                    - gwaff[user]["total_xp"][list(gwaff[user]["total_xp"])[-2]]
+                )
+            ] = gwaff[user]["name"]
+        except IndexError:
+            break
 
-def byrank(gwaff):
+    users = sorted(users.items(), reverse=True)
+
+    y = []
+    x = []
+    for user in users[0:config["bar_range"]]:
+        y.append(user[0])
+        x.append(user[1].split("#")[0])
+
+    plt.figure(figsize=(14, 7))
+
+    plt.bar([i for i, _ in enumerate(x)], y)
+    plt.xticks([i for i, _ in enumerate(x)], x, rotation="vertical")
+    plt.title(f"{config['title']}\ntop xp gains for the past 2 days")
+    plt.xlabel(f"{config['bottom_message']}")
+    plt.ylabel(f"xp gained")
+    plt.show()
+
+
+def line(gwaff):
     with open("config.yml", "r") as file:
         config = safe_load(file)
 
