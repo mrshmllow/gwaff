@@ -12,7 +12,7 @@ Originally made for the mumbo jumbo discord server
 ```server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
 title: "GWAFF V2"
-bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff" # example text
+bottom_message: "\n\ntemplate text.\nCheck out the github on bwac2517/gwaff" # example text
 plot:
   range: 60 # how many users to include in the plots
   minium_xp: 500 # anyone with a xp gain below this will not be included in the plots
