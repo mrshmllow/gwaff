@@ -1,4 +1,4 @@
-from scripts import plot, history
+from scripts import plot, data
 import datetime
 import json
 import argparse
@@ -11,10 +11,10 @@ args = parser.parse_args()
 
 if parser.parse_args().s:
     print("Saving...")
-    new_users = history.get()
+    new_users = data.get()
     time = datetime.datetime.today()
 
-    gwaff = history.generate_gwaff(new_users, time)
+    gwaff = data.generate_gwaff(new_users, time)
     with open("gwaff.json", "w") as out:
         json.dump(gwaff, out, indent=4)
 
