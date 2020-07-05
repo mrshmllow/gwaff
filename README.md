@@ -7,7 +7,7 @@ A mee6 xp graphing python program using matplotlib.
 Originally made for the mumbo jumbo discord server
 
 1. To use it for your own server, ![fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
-2. Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)  
+2. Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 ```server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
 title: "GWAFF V2"
