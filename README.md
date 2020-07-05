@@ -25,5 +25,4 @@ bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out 
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
 
 4. Every two days, you can generate with `python3 gwaff.py -p`, hack in any changes you want (open a PR :p)
-
-### Fun fact, you can do `python3 gwaff.py -p -s` to do both at once
+#### you can do `python3 gwaff.py -p -s` to do both at once
