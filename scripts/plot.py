@@ -27,7 +27,7 @@ def bar(gwaff):
 
     y = []
     x = []
-    for user in users[0:config["bar_range"]]:
+    for user in users[0 : config["bar_range"]]:
         y.append(user[0])
         x.append(user[1].split("#")[0])
 
