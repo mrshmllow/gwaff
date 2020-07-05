@@ -10,13 +10,17 @@ To use it for your own server, ![fork](https://github.com/bwac2517/gwaff/fork) o
 Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 
 ```server_id: 377946908783673344 # your server id
-plot_range: 60 # how many uses to include in the plots
-data_range: 300 # -1 for all users. how many people to include in data collection
-minium_xp: 500 # anyone with a xp gain below this will not be included in the plots
-rank_range: 20 # the interval it starts a new graph
 darkmode: true # dark mode or not
-title: "GWAFF V2\nxp gain overtime"
-bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff"
+title: "GWAFF V2"
+bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff" # example text
+plot:
+  range: 60 # how many users to include in the plots
+  minium_xp: 500 # anyone with a xp gain below this will not be included in the plots
+  rank_range: 20 # the interval it starts a new graph
+bar:
+  range: 15 # how many users to include in the bar graph
+data:
+  range: 300 # -1 for all users. how many people to include in data collection
 ```
 
 You have to run store.py at the same time, every day.
