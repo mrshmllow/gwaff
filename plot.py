@@ -6,4 +6,5 @@ time = datetime.datetime.today()
 with open("gwaff.json", "r") as outfile:
     gwaff = json.load(outfile)
 
-plot.byrank(gwaff)
+plot.bar(gwaff)
+plot.line(gwaff)
