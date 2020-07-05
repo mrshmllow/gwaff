@@ -20,8 +20,8 @@ rank_range: 20 # the interval it starts a new graph
 darkmode: true # dark mode or not
 title: "GWAFF V2\nxp gain overtime"
 bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff"
-```  
-3. You have to run `python3 gwaff.py -s` everyday, at the same time (to keep it consistent)
+```
+3. You have to run `python3 gwaff.py -s` everyday, at the same time (to keep it consistent)  
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
 
 4. Every two days, you can generate with `python3 gwaff.py -p`, hack in any changes you want (open a PR :p)  
