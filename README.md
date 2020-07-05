@@ -8,9 +8,9 @@ Originally made for the mumbo jumbo discord server
 
 To use it for your own server, follow these steps:
 
-1.![fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
+1. ![fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
 
-2.Edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
+2. Edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 ```server_id: 377946908783673344 # your server id
 plot_range: 60 # how many uses to include in the plots
 bar_range: 15 # how many users to include in the bars
@@ -25,4 +25,5 @@ bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out 
 3. You have to run `python3 gwaff.py -s` everyday, at the same time (to keep it consistent)
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
 
-4.Every two days, you can generate with `python3 gwaff.py -p`, hack in any changes you want (open a PR :p)  **you can do `python3 gwaff.py -p -s` to do both at once**
+4. Every two days, you can generate with `python3 gwaff.py -p`, hack in any changes you want (open a PR :p)  
+**you can do `python3 gwaff.py -p -s` to do both at once**
