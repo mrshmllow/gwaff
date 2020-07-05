@@ -12,3 +12,4 @@ with open(f"history/{time}.json", "w") as file:
 gwaff = gwaff.generate(new_users, time)
 with open("gwaff.json", "w") as out:
     json.dump(gwaff, out, indent=4)
+
