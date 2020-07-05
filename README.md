@@ -20,3 +20,4 @@ bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out 
 
 You have to run store.py at the same time, every day.
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)
+Every two days, you can generate a graph, hack in any changes you want (open a pull request! :p)
