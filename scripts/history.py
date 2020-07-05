@@ -3,7 +3,7 @@ from yaml import safe_load
 
 
 def get():
-    with open("../config.yml", "r") as file:
+    with open("config.yml", "r") as file:
         config = safe_load(file)
     page = 0
     users = {}
