@@ -27,7 +27,7 @@ def bar(gwaff):
 
     y = []
     x = []
-    for user in users[0 : config["bar_range"]]:
+    for user in users[0 : int(config["bar"]["range"])]:
         y.append(user[0])
         x.append(user[1].split("#")[0])
 
@@ -75,10 +75,10 @@ def line(gwaff):
     plt.figure(figsize=(14, 7))
     g = 0
     q = 0
-    rankrange = [0, config["rank_range"]]
+    rankrange = [0, config["plot"]["rank_range"]]
     for user in gwaff:
-        if g < config["plot_range"]:
-            if q < config["rank_range"] - 1:
+        if g < config["plot"]["range"]:
+            if q < config["plot"]["range"] - 1:
                 y = [0]
                 x = []
                 total_xp = gwaff[user]["total_xp"]
@@ -86,7 +86,7 @@ def line(gwaff):
                     first = i[0]
                     second = i[1]
                     y.append(abs(total_xp[first] - total_xp[second]))
-                if y[-1] < config["minium_xp"]:
+                if y[-1] < config["plot"]["minium_xp"]:
                     q += 1
                     g += 1
                     continue
@@ -106,9 +106,9 @@ def line(gwaff):
                 plt.ylabel("gain")
                 title = f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
                 rankrange[0] = rankrange[1]
-                rankrange[1] = rankrange[1] + config["rank_range"]
-                if config["minium_xp"] > 0:
-                    title += f"\ngain atleast {config['minium_xp']} to appear"
+                rankrange[1] = rankrange[1] + config["plot"]["rank_range"]
+                if config["plot"]["minium_xp"] > 0:
+                    title += f"\ngain atleast {config['plot']['minium_xp']} to appear"
                 plt.title(f"{title}\nxp gained overtime")
                 plt.show()
                 plt.close()
