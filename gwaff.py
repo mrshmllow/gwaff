@@ -4,9 +4,9 @@ import json
 import argparse
 
 
-parser = argparse.ArgumentParser(description='mee6 xp graphing')
-parser.add_argument('-p', help='Use this if you want to plot', action='store_true')
-parser.add_argument('-s', help='Use this if you want to store', action='store_true')
+parser = argparse.ArgumentParser(description="mee6 xp graphing")
+parser.add_argument("-p", help="Use this if you want to plot", action="store_true")
+parser.add_argument("-s", help="Use this if you want to store", action="store_true")
 args = parser.parse_args()
 
 if parser.parse_args().s:
