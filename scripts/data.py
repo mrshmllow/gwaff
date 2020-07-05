@@ -10,7 +10,7 @@ def get():
     users = {}
     q = 0
     i = 0
-    while i < int(config["data_range"] / 100):
+    while i < int(config["data"]["range"] / 100):
         r = requests.get(
             f"https://mee6.xyz/api/plugins/levels/leaderboard/{config['server_id']}?page={str(page)}"
         ).json()
@@ -19,7 +19,7 @@ def get():
                 exit("guild not found")
         if not r["players"] == []:
             for user in r["players"]:
-                if q < config["data_range"] or q == config["data_range"]:
+                if q < config["data"]["range"] or q == config["data"]["range"]:
                     users[str(q)] = user
                 q += 1
         else:
