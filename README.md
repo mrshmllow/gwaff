@@ -5,9 +5,9 @@ A mee6 xp graphing python program using matplotlib.
 Originally made for the mumbo jumbo discord server.  
 To use it for your own server, follow these steps:
 
-1. ![Fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.  
-2. Edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)  
-3. Edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)  
+1. ![Fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.   
+2. Edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)   
+3. Edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)   
 ```server_id: 377946908783673344 # your server id
 plot_range: 60 # how many uses to include in the plots
 bar_range: 15 # how many users to include in the bars
@@ -17,7 +17,7 @@ rank_range: 20 # the interval it starts a new graph
 darkmode: true # dark mode or not
 title: "GWAFF V2\nxp gain overtime"
 bottom_message: "\n\nJoin cremes server for dedicated gwaff channel.\nCheck out the github on bwac2517/gwaff"
-```  
+```   
 4. You have to run `python3 gwaff.py -s` everyday, at the same time (to keep it consistent)
 
 5. Every two days, you can generate with `python3 gwaff.py -p`, hack in any changes you want (open a PR :p)
