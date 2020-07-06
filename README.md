@@ -2,14 +2,16 @@
 ![image](https://i.imgur.com/KLeOwEM.png "Demo image") ![image 2](https://i.imgur.com/u4zb68g.png "Demo image 2")
 
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bwac2517/gwaff/data-collection?label=xp%20data%20collection&style=flat-square) ![code sytle](https://img.shields.io/badge/code%20style-black-black?style=flat-square) ![Codacy branch grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed/master?style=flat-square)
+
+![code sytle](https://img.shields.io/badge/code%20style-black-black?style=flat-square) ![Codacy branch grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed/master?style=flat-square)
 
 A mee6 xp graphing python program using matplotlib.
 
 Originally made for the Mumbo Jumbo Discord server
 
 ## Steps to use for your own server
-1. ![Fork](https://github.com/bwac2517/gwaff/fork) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
+1. **Recommended:** ![Fork this](https://github.com/bwac2517/gwaff/fork)  
+Alternatively: ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
 2. Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 ```server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
