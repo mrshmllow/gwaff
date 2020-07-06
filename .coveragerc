@@ -2,5 +2,4 @@
 omit =
     venv/*
 [xml]
-output =
-    cobertura.xml
+output = cobertura.xml
