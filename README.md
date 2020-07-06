@@ -16,9 +16,9 @@ See your xp gain over time, and keep track of your highest talkers!
 Originally made for the Mumbo Jumbo Discord server.
 
 ## Steps to use for your own server
-1. **Recommended:** ![Fork this](https://github.com/bwac2517/gwaff/fork)  
-Alternatively: ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
-2. Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
+1. **Recommended:** [Fork this](https://github.com/bwac2517/gwaff/fork)  
+Alternatively: [download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
+2. Next, edit the [config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 ```
 server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
@@ -94,4 +94,4 @@ jobs:
 This will generate the xp data on `gwaff.json`, and push it to master, every 00:00 UTC.  
 Once you save and commit that file, you dont have to do anything, just check back after 00:00 UTC and you should see a new commit!
 
-Read more about github actions: ![https://github.com/features/actions](https://github.com/features/actions)
+Read more about github actions: [https://github.com/features/actions](https://github.com/features/actions)
