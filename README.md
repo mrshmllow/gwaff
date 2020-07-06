@@ -10,6 +10,11 @@
 
 A mee6 xp graphing python program using matplotlib.
 
+Generate line plots and bar charts from mee6 xp data!  
+See your xp gain over time, and keep track of your highest talkers!
+
+---
+
 Originally made for the Mumbo Jumbo Discord server.
 
 ## Steps to use for your own server
