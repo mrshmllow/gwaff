@@ -31,7 +31,7 @@ Install dependencies with `pip install -r requirements.txt`
 4. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep consistency) (Use a github action for this to automate it)  
 This is saved in `gwaff.json` **strongly recommended you use git incase you want to roll back any unwanted saves**
 
-5. You can generate a graphs with `python3 gwaff.py -p`  
+5. After 2 days of data, you can generate graphs with `python3 gwaff.py -p`  
 **you can use `python3 gwaff.py -s -p` to do both at once**. 
 
 6. Make any changes you want! (make a pull request :p)
