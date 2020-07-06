@@ -1,4 +1,4 @@
-# gwaff
+# 📈 gwaff
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bwac2517/gwaff/data-collection?label=xp%20data%20collection&style=flat-square) ![code sytle](https://img.shields.io/badge/code%20style-black-black?style=flat-square) ![Codacy branch grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed/master?style=flat-square)
 
 A mee6 xp graphing python program using matplotlib.
