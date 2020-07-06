@@ -1,4 +1,4 @@
-name: record-xp-data
+name: data-collection
 
 on:
   schedule:    
