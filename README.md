@@ -26,8 +26,7 @@ data:
 ```
 3. You should ![make a venv](https://docs.python.org/3/library/venv.html).  
 Install dependencies with `pip install -r requirements.txt`
-4. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep consistency)  
-![(we use a github action for this)](https://github.com/bwac2517/gwaff/actions?query=workflow%3Adata-collection)  
+4. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep consistency) (Use a github action for this to automate it)  
 This is saved in `gwaff.json` **strongly recommended you use git incase you want to roll back any unwanted saves**
 
 5. You can generate a graphs with `python3 gwaff.py -p`  
