@@ -78,7 +78,7 @@ def line(gwaff):
     rankrange = [0, config["plot"]["rank_range"]]
     for user in gwaff:
         if g < config["plot"]["range"]:
-            if q < config["plot"]["range"] - 1:
+            if q < config["plot"]["rank_range"] - 1:
                 y = [0]
                 x = []
                 total_xp = gwaff[user]["total_xp"]
@@ -101,7 +101,8 @@ def line(gwaff):
                 labelLines(plt.gca().get_lines(), align=True)
                 plt.legend(bbox_to_anchor=(1, 1))
                 plt.xlabel(
-                    f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}{config['bottom_message']}"
+                    f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}"
+                    f"{config['bottom_message']}"
                 )
                 plt.ylabel("gain")
                 title = f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
