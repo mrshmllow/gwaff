@@ -7,7 +7,7 @@
 
 A mee6 xp graphing python program using matplotlib.
 
-Originally made for the Mumbo Jumbo Discord server
+Originally made for the Mumbo Jumbo Discord server.
 
 ## Steps to use for your own server
 1. **Recommended:** ![Fork this](https://github.com/bwac2517/gwaff/fork)  
