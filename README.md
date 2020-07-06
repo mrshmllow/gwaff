@@ -13,7 +13,8 @@ Originally made for the Mumbo Jumbo Discord server.
 1. **Recommended:** ![Fork this](https://github.com/bwac2517/gwaff/fork)  
 Alternatively: ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
 2. Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
-```server_id: 377946908783673344 # your server id
+```
+server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
 title: "GWAFF V2"
 bottom_message: "\n\ntemplate text.\nCheck out the github on bwac2517/gwaff" # example text
