@@ -22,7 +22,7 @@ data:
   range: 300 # -1 for all users. how many people to include in data collection
 ```
 3. You should ![make a venv](https://docs.python.org/3/library/venv.html).  
-Install dependencies with `python3 -m pip install -r requirements.txt`
+Install dependencies with `pip install -r requirements.txt`
 4. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep consistency)  
 ![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)  
 This is saved in `gwaff.json` **strongly recommended you use git incase you want to roll back a unwanted save**
