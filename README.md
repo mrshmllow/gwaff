@@ -1,5 +1,5 @@
 # 📈 gwaff
-![logo](https://i.imgur.com/rPRyDdT.png)
+![logo](https://raw.githubusercontent.com/bwac2517/gwaff/master/assets/logo.png)
 
 ![image](https://i.imgur.com/mFQKdG0.png "Demo image")
 
