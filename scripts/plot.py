@@ -35,7 +35,7 @@ def bar(gwaff):
 
     plt.bar([i for i, _ in enumerate(x)], y)
     plt.xticks([i for i, _ in enumerate(x)], x, rotation="vertical")
-    plt.title(f"{config['title']}\ntop xp gains for the past 2 days")
+    plt.title(f"{config['title']}\ntop xp gains for the day")
     plt.xlabel(f"{config['bottom_message']}")
     plt.ylabel(f"xp gained")
     plt.show()
