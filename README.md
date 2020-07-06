@@ -1,8 +1,6 @@
 # 📈 gwaff
 ![image](https://i.imgur.com/KLeOwEM.png "Demo image") ![image 2](https://i.imgur.com/u4zb68g.png "Demo image 2")
 
-
-
 ![code sytle](https://img.shields.io/badge/code%20style-black-black?style=flat-square) ![Codacy branch grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed/master?style=flat-square)
 
 `Why is it called 'gwaff?'`  
