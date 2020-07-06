@@ -12,10 +12,10 @@ args = parser.parse_args()
 
 def save():
     print("Saving...")
-    new_users = data.get()
+    new_data = data.get()
     time = datetime.datetime.today()
 
-    gwaff = data.generate_gwaff(new_users, time)
+    gwaff = data.generate_gwaff(new_data, time)
     with open("gwaff.json", "w") as out:
         json.dump(gwaff, out, indent=4)
 
