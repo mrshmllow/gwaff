@@ -94,4 +94,4 @@ jobs:
 This will generate the xp data on `gwaff.json`, and push it to master, every 00:00 UTC.  
 Once you save and commit that file, you dont have to do anything, just check back after 00:00 UTC and you should see a new commit!
 
-Read more about github actions: https://github.com/features/actions
+Read more about github actions: ![https://github.com/features/actions](https://github.com/features/actions)
