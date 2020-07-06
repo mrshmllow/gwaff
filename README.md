@@ -1,4 +1,4 @@
-# gwaff |  📈 Open source mee6.xyz xp graphing 
+# gwaff |  📈 Open source [mee6.xyz](https://mee6.xyz/) xp graphing 
 ![logo](https://raw.githubusercontent.com/bwac2517/gwaff/master/assets/logo.png)
 
 ![image](https://i.imgur.com/mFQKdG0.png "Demo image")
