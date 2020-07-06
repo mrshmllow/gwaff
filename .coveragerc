@@ -1,5 +1,0 @@
-[run]
-omit =
-    venv/*
-[xml]
-output = cobertura.xml
