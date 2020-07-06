@@ -38,3 +38,54 @@ This is saved in `gwaff.json`
 **you can use `python3 gwaff.py -s -p` to do both at once**. 
 
 6. Make any changes you want! (make a pull request :p)
+
+***Note:*** There is github action called `black.yml` which automatically blackens python files, delete if you don't want to blacken.
+
+## Automatically save data using github actions
+Use github actions to automate the data collection process, it's easier than setting up your own server, plus it's free (and easy!).
+
+All you have to do is make a file called `xp-collection.yml` in `/.github/workflows/` with the contents:
+
+```
+name: data-collection
+
+on:
+  schedule:    
+  - cron: "0 0 * * *"
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: store data
+      run:
+        python3 gwaff.py -s
+
+    - uses: EndBug/add-and-commit@v4
+      with:
+        message: "automated recording of xp data"
+        add: "*"
+        cwd: .
+        force: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+This will generate the xp data on `gwaff.json`, and push it to master, every 00:00 UTC.  
+Once you save and commit that file, you dont have to do anything, just check back after 00:00 UTC and you should see a new commit!
+
+Read more about github actions: https://github.com/features/actions
