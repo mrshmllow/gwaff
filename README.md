@@ -1,4 +1,8 @@
 # 📈 gwaff
+![image](https://i.imgur.com/KLeOwEM.png "Demo image")
+![image 2](https://i.imgur.com/u4zb68g.png "Demo image 2")
+
+
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/bwac2517/gwaff/data-collection?label=xp%20data%20collection&style=flat-square) ![code sytle](https://img.shields.io/badge/code%20style-black-black?style=flat-square) ![Codacy branch grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed/master?style=flat-square)
 
 A mee6 xp graphing python program using matplotlib.
@@ -24,8 +28,8 @@ data:
 3. You should ![make a venv](https://docs.python.org/3/library/venv.html).  
 Install dependencies with `pip install -r requirements.txt`
 4. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep consistency)  
-![(we use a github action for this)](https://github.com/bwac2517/gwaff/blob/master/.github/workflows/main.yml)  
-This is saved in `gwaff.json` **strongly recommended you use git incase you want to roll back a unwanted save**
+![(we use a github action for this)](https://github.com/bwac2517/gwaff/actions?query=workflow%3Adata-collection)  
+This is saved in `gwaff.json` **strongly recommended you use git incase you want to roll back any unwanted saves**
 
 5. You can generate a graphs with `python3 gwaff.py -p`  
 **you can use `python3 gwaff.py -s -p` to do both at once**. 
