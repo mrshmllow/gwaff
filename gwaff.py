@@ -23,7 +23,6 @@ def save():
 def plot_():
     print("Plotting...")
 
-    time = datetime.datetime.today()
     with open("gwaff.json", "r") as outfile:
         gwaff = json.load(outfile)
 
