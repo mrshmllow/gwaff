@@ -113,6 +113,10 @@ def line(gwaff):
                 if config["plot"]["minium_xp"] > 0:
                     title += f"\ngain atleast {config['plot']['minium_xp']} to appear"
                 plt.title(f"{title}\nxp gained overtime")
+                if config["darkmode"]:
+                    plt.grid(color="Gray")
+                else:
+                    plt.grid()
                 plt.show()
                 plt.close()
 
