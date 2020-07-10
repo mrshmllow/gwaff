@@ -186,7 +186,10 @@ def line(gwaff):
                 q += 1
                 g += 1
             else:
-                labelLines(plt.gca().get_lines(), align=True)
+                try:
+                    labelLines(plt.gca().get_lines(), align=True)
+                except IndexError:
+                    print("Label lines failed")
                 plt.legend(bbox_to_anchor=(1, 1))
                 plt.xlabel(
                     f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}"
