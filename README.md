@@ -25,13 +25,17 @@ Alternatively: [download it](https://github.com/bwac2517/gwaff/archive/master.zi
 server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
 title: "GWAFF V2"
-bottom_message: "\n\ntemplate text.\nCheck out the github on bwac2517/gwaff" # example text
+bottom_message: "\nCheck out the github on bwac2517/gwaff"
 plot:
   range: 60 # how many users to include in the plots
   minium_xp: 500 # anyone with a xp gain below this will not be included in the plots
   rank_range: 20 # the interval it starts a new graph
 bar:
   range: 15 # how many users to include in the bar graph
+versus: # which people to include in the versus plot, leave empty if you dont want it.
+  - 408355239108935681 # some example people
+  - 478934200007917569
+  - 298294667219435521
 data:
   range: 300 # -1 for all users. how many people to include in data collection
 ```
