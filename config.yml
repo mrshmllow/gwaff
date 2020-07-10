@@ -8,5 +8,9 @@ plot:
   rank_range: 20 # the interval it starts a new graph
 bar:
   range: 15 # how many users to include in the bar graph
+versus: # which people to include in the versus plot, leave empty if you dont want it.
+  - 408355239108935681 # some example people
+  - 478934200007917569
+  - 298294667219435521
 data:
   range: 300 # -1 for all users. how many people to include in data collection

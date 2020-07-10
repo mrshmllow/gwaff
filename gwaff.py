@@ -28,6 +28,7 @@ def plot_():
 
     plot.bar(gwaff)
     plot.line(gwaff)
+    plot.versus(gwaff)
 
 
 if parser.parse_args().s:
