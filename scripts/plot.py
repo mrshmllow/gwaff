@@ -196,9 +196,7 @@ def line(gwaff):
                     f"{config['bottom_message']}"
                 )
                 plt.ylabel("gain")
-                title = (
-                    f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
-                )
+                title = f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
                 rankrange[0] = rankrange[1]
                 rankrange[1] = rankrange[1] + config["plot"]["rank_range"]
                 if config["plot"]["minium_xp"] > 0:
