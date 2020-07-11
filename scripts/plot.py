@@ -4,7 +4,7 @@ from labellines import labelLines
 from yaml import safe_load
 
 
-def versus(gwaff):
+def versus(gwaff, save: bool = False):
     with open("config.yml", "r") as file:
         config = safe_load(file)
 
@@ -76,7 +76,9 @@ def versus(gwaff):
         f"{config['bottom_message']}"
     )
     plt.ylabel("gain")
-    title = f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
+    title = (
+        f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
+    )
     rankrange[0] = rankrange[1]
     rankrange[1] = rankrange[1] + config["plot"]["rank_range"]
     plt.title(f"{title}\nVersus")
@@ -84,12 +86,14 @@ def versus(gwaff):
         plt.grid(color="Gray")
     else:
         plt.grid()
-    plt.show()
+    if save:
+        plt.savefig("images/versus.png")
+    else:
+        plt.show()
     plt.close()
-    plt.figure(figsize=(14, 7))
 
 
-def bar(gwaff):
+def bar(gwaff, save: bool = False):
     with open("config.yml", "r") as file:
         config = safe_load(file)
 
@@ -123,10 +127,14 @@ def bar(gwaff):
     plt.title(f"{config['title']}\ntop xp gains for the day")
     plt.xlabel(f"{config['bottom_message']}")
     plt.ylabel(f"xp gained")
-    plt.show()
+    if save:
+        plt.savefig("images/bar.png")
+    else:
+        plt.show()
+    plt.close()
 
 
-def line(gwaff):
+def line(gwaff, save: bool = False):
     with open("config.yml", "r") as file:
         config = safe_load(file)
 
@@ -183,10 +191,7 @@ def line(gwaff):
                 q += 1
                 g += 1
             else:
-                try:
-                    labelLines(plt.gca().get_lines(), align=True)
-                except IndexError:
-                    print("Label lines failed")
+                labelLines(plt.gca().get_lines(), align=True)
                 plt.legend(bbox_to_anchor=(1, 1))
                 plt.xlabel(
                     f"days since {list(gwaff['408355239108935681']['message_count'].keys())[0].split(' ')[0]}"
@@ -199,11 +204,10 @@ def line(gwaff):
                 if config["plot"]["minium_xp"] > 0:
                     title += f"\ngain atleast {config['plot']['minium_xp']} to appear"
                 plt.title(f"{title}\nxp gained overtime")
-                if config["darkmode"]:
-                    plt.grid(color="Gray")
+                if save:
+                    plt.savefig(f"images/plot_{rankrange[0]}-{rankrange[1]}")
                 else:
-                    plt.grid()
-                plt.show()
+                    plt.show()
                 plt.close()
 
                 plt.figure(figsize=(14, 7))
