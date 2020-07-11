@@ -18,9 +18,10 @@ See your xp gain over time, and keep track of your highest talkers!
 Originally made for the Mumbo Jumbo Discord server.
 
 ## Steps to use for your own server
-1. **Recommended:** [Fork this](https://github.com/bwac2517/gwaff/fork)  
-Alternatively: [download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
-2. Next, edit the [config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
+## For dummies (github beginners)
+1. First, you will need to make a github accoun if you dont already have one, it's easy, just go to [https://github.com/signup](https://github.com/signup)
+2. Once your back here, [Fork this](https://github.com/bwac2517/gwaff/fork), its okay if it doesnt make sense right now  
+3. Next, edit the config.yml on your fork, you can find your fork at "https://github.com/[your-username]/gwaff"
 ```
 server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
@@ -39,32 +40,16 @@ versus: # which people to include in the versus plot, leave empty if you dont wa
 data:
   range: 300 # -1 for all users. how many people to include in data collection
 ```
-3. You should ![make a venv](https://docs.python.org/3/library/venv.html).  
-Install dependencies with `pip install -r requirements.txt`
-4. Run `python3 gwaff.py -s` every day to collect xp data (at the same time of day to keep consistency)  
-(Use a github action for this to automate it in the next section!)  
-This is saved in `gwaff.json`  
-**It's strongly recommended you use git incase you want to roll back any unwanted saves**
-
-5. After 2 days of data, you can generate graphs with `python3 gwaff.py -p`  
-**you can use `python3 gwaff.py -s -p` to do both at once**. 
-
-6. Make any changes you want! (make a pull request :p)
-
-***Note:*** There is github action called `black.yml` which automatically blackens python files, delete if you don't want to blacken.
-
-## Automatically save data using github actions
-Use github actions to automate the data collection process, it's easier than setting up your own server, plus it's free (and easy!).
-
-All you have to do is make a file called `xp-collection.yml` in `/.github/workflows/` with the contents:
-
+4. On your fork, press the Settings button. Now press Secrets. Press New Secret. Now on your discord server, press the cog on a channel, select Webhooks, then press Create Webhook, you can edit the name and stuff, but copy your webhook url. Now go back to your new secret, and paste it into the Value box, and call your secret "WEBHOOK_URL", press Update.
+5. Now, your going to create a new file at /.github/workflows/data.yml, press Add file on your fork, then select Create New File, then paste ".github/workflows/data.yml" into the name of the file so it looks like this ![image](https://i.imgur.com/yExkeXO.png).  
+Now paste
 ```
 name: data-collection
 
 on:
   schedule:    
   - cron: "0 0 * * *"
-
+  
 jobs:
   record:
     runs-on: ubuntu-latest
@@ -86,7 +71,7 @@ jobs:
     
     - name: store data
       run:
-        python3 gwaff.py -s
+        python3 gwaff.py --store --save --plot --post ${{ secrets.WEBHOOK_URL }}
 
     - uses: EndBug/add-and-commit@v4
       with:
@@ -97,7 +82,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-This will generate the xp data on `gwaff.json`, and push it to master, every 00:00 UTC.  
-Once you save and commit that file, you dont have to do anything, just check back after 00:00 UTC and you should see a new commit!
-
-Read more about github actions: [https://github.com/features/actions](https://github.com/features/actions)
+If you did this right, your graphs will be posted into your channel every day at 00:00 UTC
