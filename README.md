@@ -21,7 +21,8 @@ Originally made for the Mumbo Jumbo Discord server.
 ## For dummies (github beginners)
 1. First, you will need to make a github accoun if you dont already have one, it's easy, just go to [https://github.com/signup](https://github.com/signup)
 2. Once your back here, [Fork this](https://github.com/bwac2517/gwaff/fork), its okay if it doesnt make sense right now  
-3. Next, edit the config.yml on your fork, you can find your fork at "https://github.com/[your-username]/gwaff"
+3. Next, edit the config.yml on your fork, you can find your fork at "https://github.com/[your-username]/gwaff"  
+replace the values to what you would like:
 ```
 server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
