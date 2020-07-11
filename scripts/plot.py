@@ -76,9 +76,7 @@ def versus(gwaff):
         f"{config['bottom_message']}"
     )
     plt.ylabel("gain")
-    title = (
-        f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
-    )
+    title = f"{config['title']}\nrank: {rankrange[0]}-{rankrange[1]}"
     rankrange[0] = rankrange[1]
     rankrange[1] = rankrange[1] + config["plot"]["rank_range"]
     plt.title(f"{title}\nVersus")
@@ -89,7 +87,6 @@ def versus(gwaff):
     plt.show()
     plt.close()
     plt.figure(figsize=(14, 7))
-
 
 
 def bar(gwaff):
