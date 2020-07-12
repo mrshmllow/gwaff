@@ -36,23 +36,11 @@ def plot_(save: bool = False):
         plot.bar(gwaff, save=True)
         if type(args.post) == str:
             image = open(f"images/bar.png", "rb")
-            requests.post(
-                url=args.post,
-                json={
-                    "embeds": [
-                        {
-                            "title": "title",
-                            "thumbnail": {
-                                "url": "https://raw.githubusercontent"
-                                ".com/bwac2517/gwaff/master"
-                                "/assets/icon.png"
-                            },
-                            "image": {"url": "attachment://image.png"},
-                        }
-                    ]
-                },
-                files={"image.png": image},
-            )
+            requests.post(url=args.post,
+                          json={"embeds": [{"title": "title", "thumbnail": {"url": "https://raw.githubusercontent"
+                                                                                   ".com/bwac2517/gwaff/master"
+                                                                                   "/assets/icon.png"},
+                                            "image": {"url": "attachment://image.png"}}]}, files={"image.png": image})
         files = plot.line(gwaff, save=True)
         if type(args.post) == str:
             for file in files:
