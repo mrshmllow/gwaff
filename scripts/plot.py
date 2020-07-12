@@ -59,7 +59,7 @@ def line(gwaff, save: bool = False):
             "cyan",
             "magenta",
             "yellow",
-            "black",
+            "grey",
             "purple",
             "pink",
             "brown",
