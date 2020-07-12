@@ -3,6 +3,7 @@ import matplotlib as mpl
 from labellines import labelLines
 from yaml import safe_load
 
+
 def bar(gwaff, save: bool = False):
     with open("config.yml", "r") as file:
         config = safe_load(file)
