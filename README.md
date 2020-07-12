@@ -35,7 +35,7 @@ plot:
 bar:
   range: 15 # how many users to include in the bar graph
 data:
-  range: 300 # -1 for all users. how many people to include in data collection
+  range: 300
 ```
 4. On your fork, press the Settings button. Now press Secrets. Press New Secret. Now on your discord server, press the cog on a channel, select Webhooks, then press Create Webhook, you can edit the name and stuff, but copy your webhook url. Now go back to your new secret, and paste it into the Value box, and call your secret "WEBHOOK_URL", press Update.
 5. Now, your going to create a new file at /.github/workflows/data.yml, press Add file on your fork, then select Create New File, then paste ".github/workflows/data.yml" into the name of the file so it looks like this ![image](https://i.imgur.com/yExkeXO.png).  
