@@ -8,9 +8,19 @@ import os
 
 parser = argparse.ArgumentParser(description="mee6 xp graphing")
 parser.add_argument("--plot", help="Use this if you want to plot", action="store_true")
-parser.add_argument("--store", help="Use this if you want to store", action="store_true")
-parser.add_argument("--save", help="Use this if you want to store the generated plots", action="store_true")
-parser.add_argument("--post", help="Use this if you want to post the generated plots, takes a url (str)", type=str)
+parser.add_argument(
+    "--store", help="Use this if you want to store", action="store_true"
+)
+parser.add_argument(
+    "--save",
+    help="Use this if you want to store the generated plots",
+    action="store_true",
+)
+parser.add_argument(
+    "--post",
+    help="Use this if you want to post the generated plots, takes a url (str)",
+    type=str,
+)
 args = parser.parse_args()
 
 
@@ -36,22 +46,45 @@ def plot_(save: bool = False):
         plot.bar(gwaff, save=True)
         if type(args.post) == str:
             image = open(f"images/bar.png", "rb")
-            requests.post(url=args.post,
-                          json={"embeds": [{"title": "title", "thumbnail": {"url": "https://raw.githubusercontent"
-                                                                                   ".com/bwac2517/gwaff/master"
-                                                                                   "/assets/icon.png"},
-                                            "image": {"url": "attachment://image.png"}}]}, files={"image.png": image})
+            requests.post(
+                url=args.post,
+                json={
+                    "embeds": [
+                        {
+                            "title": "title",
+                            "thumbnail": {
+                                "url": "https://raw.githubusercontent"
+                                ".com/bwac2517/gwaff/master"
+                                "/assets/icon.png"
+                            },
+                            "image": {"url": "attachment://image.png"},
+                        }
+                    ]
+                },
+                files={"image.png": image},
+            )
         files = plot.line(gwaff, save=True)
         if type(args.post) == str:
             for file in files:
-                    image = open(file, "rb")
-                    requests.post(url=args.post,
-                                  json={"embeds": [{"title": "title", "thumbnail": {"url": "https://raw"
-                                                                                           ".githubusercontent "
-                                                                                           ".com/bwac2517/gwaff/master"
-                                                                                           "/assets/icon.png"},
-                                                    "image": {"url": "attachment://image.png"}}]},
-                                  files={"image.png": image})
+                image = open(file, "rb")
+                requests.post(
+                    url=args.post,
+                    json={
+                        "embeds": [
+                            {
+                                "title": "title",
+                                "thumbnail": {
+                                    "url": "https://raw"
+                                    ".githubusercontent "
+                                    ".com/bwac2517/gwaff/master"
+                                    "/assets/icon.png"
+                                },
+                                "image": {"url": "attachment://image.png"},
+                            }
+                        ]
+                    },
+                    files={"image.png": image},
+                )
     else:
         plot.bar(gwaff)
         plot.line(gwaff)
