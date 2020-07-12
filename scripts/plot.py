@@ -86,17 +86,20 @@ def line(gwaff, save: bool = False):
             if q < config["plot"]["rank_range"] - 1:
                 y = [0]
                 x = []
-                total_xp = gwaff[user]["total_xp"]
-                for i in zip(list(total_xp), list(total_xp)[1:]):
-                    first = i[0]
-                    second = i[1]
-                    y.append(abs(total_xp[first] - total_xp[second]))
+                total_xp_ = list(gwaff[user]["total_xp"])[-10:]
+                total_xp = []
+                for i in total_xp_:
+                    total_xp.append(gwaff[user]["total_xp"][i])
+
+                for i in zip(total_xp, total_xp[1:]):
+                    y.append(abs(i[0] - i[1]))
+
                 if y[-1] < config["plot"]["minium_xp"]:
                     q += 1
                     g += 1
                     continue
                 f = 0
-                while f < len(total_xp):
+                while f < len(list(total_xp)):
                     x.append(f)
                     f += 1
                 plt.plot(x, y, label=gwaff[user]["name"].split("#")[0])
