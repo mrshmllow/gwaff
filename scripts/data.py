@@ -24,8 +24,8 @@ def get():
                 q += 1
         else:
             break
-        page += 1
         i += 1
+        page += 1
     return users
 
 
