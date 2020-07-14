@@ -18,8 +18,8 @@ See your xp gain over time, and keep track of your highest talkers!
 Originally made for the Mumbo Jumbo Discord server.
 
 ## Steps to use for your own server
-1. Press !["Use this template"](https://github.com/bwac2517/gwaff/generate) or ![download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
-2. Next, edit the ![config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
+1. ["Fork this"](https://github.com/bwac2517/gwaff/fork) or [download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
+2. Next, edit the [config.yml](https://github.com/bwac2517/gwaff/blob/master/config.yml)
 ```server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
 title: "GWAFF V2"
@@ -33,7 +33,7 @@ bar:
 data:
   range: 300 # -1 for all users. how many people to include in data collection
 ```
-3. You should ![make a venv](https://docs.python.org/3/library/venv.html).  
+3. You should [make a venv](https://docs.python.org/3/library/venv.html).  
 Install dependencies with `pip install -r requirements.txt`
 4. Run `python3 gwaff.py --store` every day to collect xp data (at the same time of day to keep consistency) (Use a github action for this to automate it)  
 This is saved in `gwaff.json` **strongly recommended you use git incase you want to roll back any unwanted saves**
