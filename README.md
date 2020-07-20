@@ -23,15 +23,20 @@ Originally made for the Mumbo Jumbo Discord server.
 ```server_id: 377946908783673344 # your server id
 darkmode: true # dark mode or not
 title: "GWAFF V2"
-bottom_message: "\n\ntemplate text.\nCheck out the github on bwac2517/gwaff" # example text
+bottom_message: "\nCheck out the github on bwac2517/gwaff"
 plot:
   range: 60 # how many users to include in the plots
   minium_xp: 500 # anyone with a xp gain below this will not be included in the plots
   rank_range: 20 # the interval it starts a new graph
 bar:
   range: 15 # how many users to include in the bar graph
+versus:
+  - 298294667219435521
+  - 387259938977742849
+  - 477148794861912084
+  - 724378805728313395
 data:
-  range: 300 # -1 for all users. how many people to include in data collection
+  range: 300
 ```
 3. You should [make a venv](https://docs.python.org/3/library/venv.html).  
 Install dependencies with `pip install -r requirements.txt`
