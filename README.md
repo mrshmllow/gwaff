@@ -1,6 +1,4 @@
 # 📈 Open source [mee6.xyz](https://mee6.xyz/) xp graphing 
-![logo](https://raw.githubusercontent.com/bwac2517/gwaff/master/assets/logo.png)
-
 ![image](https://i.imgur.com/mFQKdG0.png "Demo image")
 
 ![code sytle](https://img.shields.io/badge/code%20style-black-black?style=flat-square) ![Codacy branch grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed/master?style=flat-square)
