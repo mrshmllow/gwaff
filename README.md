@@ -28,7 +28,7 @@ plot:
   rank_range: 20 # the interval it starts a new graph
 bar:
   range: 15 # how many users to include in the bar graph
-versus:
+versus: # the versus plot, change to just 0000000000000 to be blank
   - 298294667219435521
   - 387259938977742849
   - 477148794861912084
