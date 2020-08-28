@@ -41,7 +41,10 @@ Install dependencies with `pip install -r requirements.txt`
 4. Run `python3 gwaff.py --store` every day to collect xp data (at the same time of day to keep consistency) (Use a github action for this to automate it)  
 This is saved in `gwaff.json` **strongly recommended you use git incase you want to roll back any unwanted saves**
 
-5. You can generate a graphs with `python3 gwaff.py --store --plot --save`  
+5. You can generate a graphs with `python3 gwaff.py --plot --save`, or use `python3 gwaff.py --store --plot --save` to save mee6 data AND plot it at the same time.  
 **you can use `python3 gwaff.py --store --plot --save --post {A discord webhook url}` to post to discord at the same time**. 
 
-6. Make any changes you want! (make a pull request :p)
+6. **RECOMMENDED**
+- [Copy this gist](https://gist.github.com/bwac2517/f979c98e9b8a24ec44a646346f988622) to your fork in the path `.github/workflows/data-collection.yml`
+- In your fork settings, go to "Secrets" and make one called `WEBHOOK_URL` (use that exact name)
+- Make a discord channel and create a webhook, copy the url for the webhook and enter it into the `WEBHOOK_URL`
