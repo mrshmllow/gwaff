@@ -14,6 +14,8 @@ See your xp gain over time, and keep track of your highest talkers!
 ---
 
 Originally made for the Mumbo Jumbo Discord server.
+**So it might need a few modifications to get it to work how you'd like it too.**
+
 
 ## Steps to use for your own server
 1. ["Fork this"](https://github.com/bwac2517/gwaff/fork) or [download it](https://github.com/bwac2517/gwaff/archive/master.zip) and use it locally.
