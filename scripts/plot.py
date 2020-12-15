@@ -178,7 +178,10 @@ def versus(gwaff, save: bool = False):
     if config["darkmode"]:
         plt.style.use("dark_background")
     plt.figure(figsize=(14, 7))
-    print(config["versus"])
+
+    if config["versus"] == None:
+        exit(1)
+    
     for user in gwaff:
         if int(user) in config["versus"]:
             y = [0]
