@@ -18,4 +18,4 @@ Originally made for the Mumbo Jumbo Discord server.
 
 
 ## Steps to use for your own server
-View on https://github.com/bwac2517/gwaff
+View on [bwac2517/gwaff](https://github.com/bwac2517/gwaff)
