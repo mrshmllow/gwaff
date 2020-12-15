@@ -4,6 +4,31 @@ from labellines import labelLines
 from yaml import safe_load
 from datetime import date
 
+mpl.rcParams["axes.prop_cycle"] = mpl.cycler(
+    color=[
+        "blue",
+        "green",
+        "red",
+        "cyan",
+        "magenta",
+        "yellow",
+        "black",
+        "purple",
+        "pink",
+        "brown",
+        "orange",
+        "teal",
+        "coral",
+        "lightblue",
+        "lime",
+        "lavender",
+        "turquoise",
+        "darkgreen",
+        "tan",
+        "salmon",
+        "gold",
+    ]
+)
 
 def bar(gwaff, save: bool = False):
     with open("config.yml", "r") as file:
@@ -54,31 +79,6 @@ def line(gwaff, save: bool = False):
 
     files = []
 
-    mpl.rcParams["axes.prop_cycle"] = mpl.cycler(
-        color=[
-            "blue",
-            "green",
-            "red",
-            "cyan",
-            "magenta",
-            "yellow",
-            "black",
-            "purple",
-            "pink",
-            "brown",
-            "orange",
-            "teal",
-            "coral",
-            "lightblue",
-            "lime",
-            "lavender",
-            "turquoise",
-            "darkgreen",
-            "tan",
-            "salmon",
-            "gold",
-        ]
-    )
     if config["darkmode"]:
         plt.style.use("dark_background")
     plt.figure(figsize=(14, 7))
@@ -150,31 +150,6 @@ def versus(gwaff, save: bool = False):
 
     files = []
 
-    mpl.rcParams["axes.prop_cycle"] = mpl.cycler(
-        color=[
-            "blue",
-            "green",
-            "red",
-            "cyan",
-            "magenta",
-            "yellow",
-            "black",
-            "purple",
-            "pink",
-            "brown",
-            "orange",
-            "teal",
-            "coral",
-            "lightblue",
-            "lime",
-            "lavender",
-            "turquoise",
-            "darkgreen",
-            "tan",
-            "salmon",
-            "gold",
-        ]
-    )
     if config["darkmode"]:
         plt.style.use("dark_background")
     plt.figure(figsize=(14, 7))
