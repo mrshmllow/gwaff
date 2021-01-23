@@ -3,6 +3,8 @@
 
 ![code sytle](https://img.shields.io/badge/code%20style-black-black?style=flat-square) ![Codacy branch grade](https://img.shields.io/codacy/grade/ca5609bf92774f9ea1d6b55cbea6dfed/master?style=flat-square)
 
+Edit: this repo is a disgrace, using json as a database? the file gets so big.. Anyway. I'm sure it's useful for someone.
+
 `Why is it called 'gwaff?'`  
 `- asked no one ever`
 
